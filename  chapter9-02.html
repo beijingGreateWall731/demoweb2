@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			.demo1{
+				border: 1px solid red;
+				height: 195px;
+				width: 200px;
+				background: url(img/gamepic1.jpg) no-repeat ;
+				margin: 0 auto;
+				position: relative;
+				color: green;
+			}
+			.demo2{
+				width: 10px;
+				height: 10px;
+				background: red;
+				border-radius: 50%;
+				position: absolute;
+				top: 0;
+				left: 0;
+				
+			}
+			.demo3{
+				background: gray;
+				width: 50px;
+				height: 50px;
+				position: fixed;
+				bottom: 20px;
+				right: 5px;
+			}
+			
+		</style>
+	</head>
+	<body>
+		<!--定位有四种：
+		static
+		relative
+		absolute
+		fixed-->
+		
+		<div class="demo1">
+			我是相对定位
+			
+			<!--子绝父相-->
+			<div class="demo2">
+				
+			</div>
+		</div>
+		
+		<div class="demo3">
+			fixed
+		</div>
+		
+	</body>
+</html>

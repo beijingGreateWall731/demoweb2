@@ -1,0 +1,5 @@
+1.html页面结构：<!DOCTYPE html> <html><head></head><body></body></html>
+2.div span link style script meta
+3. ul ol dl table
+4. a img map area
+5. form input 

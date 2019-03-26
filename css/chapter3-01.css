@@ -1,0 +1,16 @@
+.demo1{
+	background: #FF0000;
+}
+*{
+	margin: 0;
+	padding: 0;
+	
+}
+ul{
+	list-style: none;
+	margin-left: 200px;
+}
+img{
+	/*display: block;*/ /*消除图片底部三像素*/
+	vertical-align: top;
+}
