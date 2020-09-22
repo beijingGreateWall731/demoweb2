@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>练习</title>
+	<script src="js/vue.2.5.16.min.js"></script>
+	<style>
+		.top{
+			width:600px;
+			border:1px solid #000;
+			padding:5px 0px;
+			text-align: center;
+			margin:0 auto;
+		}
+		.tb{
+			border-collapse: collapse;
+            width: 602px;
+            margin:10px auto 0px;
+		}
+		th{
+			background-color: #0094ff;
+            color: white;
+		}
+		td{
+			padding: 5px;
+            border: 1px solid black;
+            text-align: center;
+		}
+		td span {
+			display: inline-block;
+			width: 100%;
+			height: 100%;
+			cursor: pointer;
+		}
+	</style>
+</head>
+<body>
+	<div class="app">
+		<div class="top">
+			编号：<input type="text" v-model="id" v-focus v-color>品牌名称：<input type="text" v-model="name">
+			<button @click="add">添加</button>
+		</div>
+		<div>
+			<table class="tb">
+				<tr>
+					<th>编号</th>
+					<th>品牌名称</th>
+					<th>创立时间</th>
+					<th>操作</th>
+				</tr>
+				<tr v-for="(item,index) in list" :key="item.id">
+					<td>{{item.id}}</td>
+					<td>{{item.name}}</td>
+					<td>{{item.time}}</td>
+					<td><span @click="myDelete(index)">删除{{index}}</span></td>
+				</tr>
+			</table>
+		</div>
+	</div>
+
+	<script>
+		var app = new Vue({
+			el:'.app',
+			data:{
+				id:'',
+				name:'',
+				list:[
+					
+				]
+			},
+			directives:{
+				focus:{
+					inserted(el){
+						el.focus();
+					}
+				},
+				color:{
+					inserted(el){
+						el.style.color = 'red';
+					}
+				}
+			},
+			methods:{
+				add(){
+					
+					item ={
+						"id":this.id,
+						"name":this.name,
+						"time":Date()
+					}
+					this.list.push(item)
+					this.id=""
+					this.name=""
+					console.log(this.list)
+				},
+				myDelete:function(index){
+					console.log('index='+index)
+					this.list.splice(index,1)
+				}
+			}
+		});
+	</script>
+</body>
+</html>
